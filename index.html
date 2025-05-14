@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Contract Demo</title>
+</head>
+<body>
+  <h1>Smart Contract Message</h1>
+  <p><strong>Current message:</strong> <span id="message">Loading...</span></p>
+
+  <input type="text" id="newMessage" placeholder="Enter new message">
+  <button onclick="updateMessage()">Update</button>
+
+  <p id="status"></p>
+
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+  <script src="abi.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
