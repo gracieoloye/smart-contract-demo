@@ -26,7 +26,6 @@ async function loadContract() {
   }
 
   provider = new ethers.providers.Web3Provider(window.ethereum);
-  await provider.send("eth_requestAccounts", []);
   signer = provider.getSigner();
   contract = new ethers.Contract(contractAddress, contractABI, signer);
 
