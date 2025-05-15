@@ -4,6 +4,21 @@ let provider;
 let signer;
 let contract;
 
+async function connectWallet() {
+  if (typeof window.ethereum !== "undefined") {
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      document.getElementById("walletAddress").innerText = "Connected: " + accounts[0];
+      loadContract();
+    } catch (err) {
+      console.error("User denied connection", err);
+    }
+  } else {
+    alert("Please install MetaMask!");
+  }
+}
+
+
 async function loadContract() {
   if (typeof window.ethereum === "undefined") {
     alert("Please install MetaMask");
